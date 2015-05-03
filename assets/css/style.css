@@ -373,6 +373,6 @@ input {
 	letter-spacing: 1px;
 }
 
-.container {
-	text-overflow: ellipsis; 
+#header {
+	margin-top: 50%;
 }
