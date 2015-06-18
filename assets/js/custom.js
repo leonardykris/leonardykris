@@ -4,14 +4,14 @@
 	jQuery(document).ready(function(){
 		jQuery('a[data-gal]').each(function() {
 			jQuery(this).attr('rel', jQuery(this).data('gal'));
-		});  	
+		});
 		jQuery("a[data-rel^='prettyPhoto']").prettyPhoto({animationSpeed:'slow',theme:'light_square',slideshow:false,overlay_gallery: false,social_tools:false,deeplinking:false});
-	}); 
+	});
 
 })(jQuery);
 
 $(function(){
-	setTimeout(startHello, 0);        
+	setTimeout(startHello, 0);
 });
 
 function startHello(){
@@ -37,7 +37,7 @@ function startIntro(){
 
 	$("#intro").typed({
         strings: [
-        			"I'm a Product Designer, UI/UX Developer and an Undergraduate taking Information Technology under <a href='http://www.topuniversities.com/universities/lancaster-university/undergrad' target='_blank'>Lancaster University</a>. I'm currently completing my final year project so this site might not be updated frequently, but you can check my <a href='https://twitter.com/leonardykris' target='_blank'>twitter feeds</a> or better, my <a href='https://www.linkedin.com/in/leonardykris' target='_blank'>linkedin account</a> for more information."
+        			"I'm a Product Designer, UI/UX Developer and an Undergraduate taking Information Technology under <a href='http://www.topuniversities.com/universities/lancaster-university/undergrad' target='_blank'>Lancaster University</a>. I'm currently completing my final year project so this site might not be updated frequently, but you can check my <a href='https://twitter.com/leonardykris' target='_blank'>twitter feeds</a> or better, my <a href='https://www.linkedin.com/in/leonardykris' target='_blank'>linkedin account</a> for more information. You can also send me a mail at <a href='mailto:leonardykris@live.com'>leonardykris@live.com</a>"
         		],
         typeSpeed: 0,
         backDelay: 2000,
