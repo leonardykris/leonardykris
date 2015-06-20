@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script type="text/javascript">
+            var host = "leonardy.co";
+            if ((host == window.location.host) && (window.location.protocol != "https:"))
+                window.location.protocol = "https";
+        </script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="assets/img/favicon.ico">
+
+        <title>Leonardy Kristianto</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <!-- <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet"> -->
+
+        <link href="assets/css/style.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css" />
+
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js"></script>
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style type="text/css" media="screen">
+            .cal-heatmap-container {
+                margin: 120px auto 20px auto;
+            }
+            .graph-label {
+                font-size: 1em;
+            }
+            legend, p {
+                text-align: center;
+                display: none;
+            }
+            #contextMenu {
+                display: none;
+            }
+            .graph-rect[y = '115'], .graph-rect[y = '138'] {
+                fill: #e1e1e1;
+            }
+            .m_10 .graph-rect {
+                fill: #F5B9AE;
+            }
+            .cal-heatmap-container rect.graph-rect.r1.q1
+            {
+                background-color: #E47267;
+                fill: #E47267
+            }
+
+            .cal-heatmap-container rect.graph-rect.r2.q2
+            {
+                background-color: #D6D1AF;
+                fill: #D6D1AF
+            }
+
+            .cal-heatmap-container rect.graph-rect.r3.q3
+            {
+                background-color: #F5B9AE;
+                fill: #F5B9AE
+            }
+
+            .cal-heatmap-container rect.graph-rect.r4.q4
+            {
+                background-color: #FFB969;
+                fill: #FFB969
+            }
+
+            .cal-heatmap-container rect.graph-rect.r5.q5
+            {
+                background-color: #E47267;
+                fill: #E47267
+            }
+            .container {
+                display: none;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div id="cal-heatmap"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <legend></legend>
+                    <p></p>
+                </div>
+            </div>
+            <div id="contextMenu" class="dropdown clearfix">
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" style="display:block;position:static;margin-bottom:5px;">
+                    <li><a id="target" tabindex="-1" href="#">Mark</a></li>
+                    <li class="divider"></li>
+                    <li><a tabindex="-1" href="#">Close</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="boxLoading">
+        </div>
+
+
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/retina-1.1.0.js"></script>
+        <script src="assets/js/jquery.hoverdir.js"></script>
+        <script src="assets/js/jquery.hoverex.min.js"></script>
+        <script src="assets/js/jquery.prettyPhoto.js"></script>
+        <script src="assets/js/jquery.isotope.min.js"></script>
+
+        <script type="text/javascript">
+            console.log(new Date());
+            // datas is an array of object
+            var datas = [
+                {date: 1434124800, value: 1},
+                {date: 1434211200, value: 1},
+
+                {date: 1436227200, value: 11},
+                {date: 1436918400, value: 11},
+                {date: 1436457600, value: 11},
+
+                {date: 1439913600, value: 21},
+                {date: 1440950400, value: 21},
+                {date: 1440000000, value: 21},
+                {date: 1440086400, value: 21},
+                {date: 1440172800, value: 21},
+                {date: 1440259200, value: 21},
+                {date: 1440345600, value: 21},
+                {date: 1440432000, value: 21},
+                {date: 1440518400, value: 21},
+                {date: 1440604800, value: 21},
+                {date: 1440691200, value: 21},
+                {date: 1440777600, value: 21},
+                {date: 1440864000, value: 21},
+
+                {date: 1435161600, value: 31},
+
+                {date: 1449072000, value: 51},
+                {date: 1449158400, value: 51},
+                {date: 1449244800, value: 51},
+                {date: 1449331200, value: 51},
+                {date: 1449417600, value: 51},
+            ]
+
+            var parser = function(data) {
+                var stats = {};
+                for (var d in data) {
+                    stats[data[d].date] = data[d].value;
+                }
+                return stats;
+            };
+
+            var calendar = new CalHeatMap();
+            calendar.init({
+                data: datas,
+                afterLoadData: parser,
+                id: '#cal-heatmap',
+                start: new Date(),
+                domain: "month",
+                subDomain: "day",
+                range: 7,
+                cellSize: 20,
+                cellRadius: 0,
+                cellPadding: 3,
+                displayLegend: false,
+                scale: [40, 60, 80, 100],
+            });
+
+            $(document).ready(function() {
+                $('.boxLoading').delay(2000).slideUp(500);
+                $('.container').delay(2500).fadeIn(500);
+            });
+
+            // var x = document.getElementById("item1").nextSibling.innerHTML;
+            var angelhack = 'AngelHack KL 2015';
+            var angelhack_body = 'Excess was the solution to waste management our team thought up few weeks before the competition. The project uses Big Data.';
+
+            var mastercard = 'Masters of Code Grand Finale';
+            var mastercard_body = "The grand finale where we will compete with teams from other cities and MasterCard's own team too.";
+
+            var exam = 'Finals';
+            var exam_body = 'Because I need to graduate too'
+
+            var asef = 'ASEF Exchange';
+            var asef_body = 'Asia Europe Foundation Summer University. Sustainable Urbanisation in Heritage Cities. Pune, India.'
+
+            var yseali = 'YSEALI Academic Fellows'
+            var yseali_body = 'Five week institutes, held on the campus of a U.S. university or college.'
+
+            var drink = '20th Drinkentrepreneurs KL'
+            var drink_body = 'Free flow for web developers!'
+
+            $(document).on('click', '.r1', function(){
+                // alert('gotcha!');
+                /*var nextElement = $(this).nextSibling;
+                while (nextElement && nextElement.nodeType !=1){
+                    nextElement = nextElement.nextSibling;
+
+                }*/
+                // console.log($(this).nextElement);
+                // $('title').text('hey');
+                $('legend').text(angelhack).fadeIn(1000);
+                $('p').text(angelhack_body).fadeIn(1000);
+
+            });
+
+            $(document).on('click', '.r2', function(){
+                $('legend').text(exam).fadeIn(1000);
+                $('p').text(exam_body).fadeIn(1000);
+            });
+
+            $(document).on('click', '.r3', function(){
+                $('legend').text(asef).fadeIn(1000);
+                $('p').text(asef_body).fadeIn(1000);
+            });
+
+            $(document).on('click', '.r4', function(){
+                $('legend').text(drink).fadeIn(1000);
+                $('p').text(drink_body).fadeIn(1000);
+            });
+
+            $(document).on('click', '.r5', function(){
+                $('legend').text(mastercard).fadeIn(1000);
+                $('p').text(mastercard_body).fadeIn(1000);
+            });
+
+            $(document).on('click', '.m_10 .graph-rect', function(){
+                $('legend').text(yseali).fadeIn(1000);
+                $('p').text(yseali_body).fadeIn(1000);
+            });
+
+            var $contextMenu = $("#contextMenu");
+
+            /*$(document).on('contextmenu', '.graph-rect', function(e) {
+                e.preventDefault();
+                var p = $(this);
+
+                $('#target').on('click', function() {
+                    p.css("fill", "#FF7474");
+                });
+
+                $contextMenu.css({
+                    display: "block",
+                    left: e.pageX-100,
+                    top: e.pageY-520,
+                    zIndex: 100
+                });
+                return false;
+            });*/
+
+            $contextMenu.on("click", "a", function() {
+               $contextMenu.hide();
+            });
+
+
+        </script>
+
+    </body>
+</html>
