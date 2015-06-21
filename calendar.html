@@ -106,8 +106,6 @@
             <div id="contextMenu" class="dropdown clearfix">
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" style="display:block;position:static;margin-bottom:5px;">
                     <li><a id="target" tabindex="-1" href="#">Mark</a></li>
-                    <li class="divider"></li>
-                    <li><a tabindex="-1" href="#">Close</a></li>
                 </ul>
             </div>
         </div>
@@ -250,10 +248,11 @@
             });
 
             var $contextMenu = $("#contextMenu");
+            var p;
 
-            /*$(document).on('contextmenu', '.graph-rect', function(e) {
+            $(document).on('contextmenu', '.graph-rect', function(e) {
                 e.preventDefault();
-                var p = $(this);
+                p = $(this);
 
                 $('#target').on('click', function() {
                     p.css("fill", "#FF7474");
@@ -261,14 +260,14 @@
 
                 $contextMenu.css({
                     display: "block",
-                    left: e.pageX-100,
-                    top: e.pageY-520,
+                    left: e.pageX-110,
+                    top: e.pageY-490,
                     zIndex: 100
                 });
                 return false;
-            });*/
+            });
 
-            $contextMenu.on("click", "a", function() {
+            $(document).on("click", "body", function() {
                $contextMenu.hide();
             });
 
